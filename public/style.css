@@ -1,0 +1,175 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  font-weight: lighter;
+  margin: 0;
+  padding: 0;
+  background-color: #8A9EA0;
+  color: #e1e5d6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures body spans the full viewport height */
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #617068;
+  border-bottom: 1px solid #59584F;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #e1e5d6;
+}
+
+header button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #888e7c;
+  border: 1px solid #617068;
+  color: #e1e5d6;
+}
+
+header button:hover {
+  background-color: #617068;
+  color: #ffffff;
+}
+
+/* Main container styles */
+main {
+  flex-grow: 1; /* Ensures main expands to fill available vertical space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box; /* Includes padding in size calculations */
+  width: 100%;
+}
+
+/* Grid container styles */
+#primeGrid {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive dynamic columns */
+}
+
+/* Grid items (numbers) */
+#primeGrid div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  background-color: #617068;
+  color: #e1e5d6;
+  border: 1px solid #59584F;
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  font-weight: lighter;
+  margin: 0;
+  padding: 0;
+  background-color: #8A9EA0;
+  color: #e1e5d6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures body spans the full viewport height */
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #617068;
+  border-bottom: 1px solid #59584F;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #e1e5d6;
+}
+
+header button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #888e7c;
+  border: 1px solid #617068;
+  color: #e1e5d6;
+}
+
+header button:hover {
+  background-color: #617068;
+  color: #ffffff;
+}
+
+/* Main container styles */
+main {
+  flex-grow: 1; /* Ensures main expands to fill available vertical space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box; /* Includes padding in size calculations */
+  width: 100%;
+}
+
+/* Grid container styles */
+#primeGrid {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive dynamic columns */
+}
+
+/* Grid items (numbers) */
+#primeGrid div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  background-color: #617068;
+  color: #e1e5d6;
+  border: 1px solid #59584F;
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+
+/* Footer styles */
+footer {
+  text-align: right;
+  margin-right: 20px;
+  padding: 10px 20px;
+  background-color: #617068;
+  color: #e1e5d6;
+  border-top: 1px solid #59584F;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-right: 40px;
+}
+
+
+.footerTag {
+  font-weight: lighter;
+  font-size: .7em;
+  margin-right: 3em;
+}
