@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>_NODEshell (Fixed Layout)</title>
+    <title>_NODEshell (Relational Primes)</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
@@ -26,6 +26,13 @@
                      <button class="shape-toggle" data-sides="8" title="Octagon (8 Primes)"><img src="assets/octagon.svg" alt="8 Sides"></button>
                      <button class="shape-toggle" data-sides="9" title="Nonagon (9 Primes)"><img src="assets/nonagon.svg" alt="9 Sides"></button>
                      <button class="shape-toggle" data-sides="10" title="Decagon (10 Primes)"><img src="assets/decagon.svg" alt="10 Sides"></button>
+                     <span class="toolbar-separator">|</span>
+                     <button id="setMinMaxButton" class="relation-button" title="Create Set from Min/Max of Selection">
+                         <i class="fas fa-arrows-alt-h"></i> Min/Max
+                     </button>
+                     <button id="setInnerPrimesButton" class="relation-button" title="Create Set from Primes Between Min/Max of Selection">
+                         <i class="fas fa-compress-arrows-alt"></i> Inner
+                     </button>
                 </div>
                 <button id="generateButton">Generate Primes</button>
             </header>
