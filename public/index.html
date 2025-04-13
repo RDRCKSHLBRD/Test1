@@ -17,22 +17,31 @@
             <header>
                 <h1>_NODEshell</h1>
                 <div class="toolbar">
-                     <button class="shape-toggle" data-sides="2" title="Line Segment (2 Primes)"><img src="assets/segment.svg" alt="2 Sides"></button>
-                     <button class="shape-toggle" data-sides="3" title="Triangle (3 Primes)"><img src="assets/triangle.svg" alt="3 Sides"></button>
-                     <button class="shape-toggle" data-sides="4" title="Square (4 Primes)"><img src="assets/square.svg" alt="4 Sides"></button>
-                     <button class="shape-toggle" data-sides="5" title="Pentagon (5 Primes)"><img src="assets/pentagon.svg" alt="5 Sides"></button>
-                     <button class="shape-toggle" data-sides="6" title="Hexagon (6 Primes)"><img src="assets/hexagon.svg" alt="6 Sides"></button>
-                     <button class="shape-toggle" data-sides="7" title="Heptagon (7 Primes)"><img src="assets/heptagon.svg" alt="7 Sides"></button>
-                     <button class="shape-toggle" data-sides="8" title="Octagon (8 Primes)"><img src="assets/octagon.svg" alt="8 Sides"></button>
-                     <button class="shape-toggle" data-sides="9" title="Nonagon (9 Primes)"><img src="assets/nonagon.svg" alt="9 Sides"></button>
-                     <button class="shape-toggle" data-sides="10" title="Decagon (10 Primes)"><img src="assets/decagon.svg" alt="10 Sides"></button>
-                     <span class="toolbar-separator">|</span>
-                     <button id="setMinMaxButton" class="relation-button" title="Create Set from Min/Max of Selection">
-                         <i class="fas fa-arrows-alt-h"></i> Min/Max
-                     </button>
-                     <button id="setInnerPrimesButton" class="relation-button" title="Create Set from Primes Between Min/Max of Selection">
-                         <i class="fas fa-compress-arrows-alt"></i> Inner
-                     </button>
+                    <button class="shape-toggle" data-sides="2" title="Line Segment (2 Primes)"><img src="assets/segment.svg" alt="2 Sides"></button>
+                    <button class="shape-toggle" data-sides="3" title="Triangle (3 Primes)"><img src="assets/triangle.svg" alt="3 Sides"></button>
+                    <button class="shape-toggle" data-sides="4" title="Square (4 Primes)"><img src="assets/square.svg" alt="4 Sides"></button>
+                    <button class="shape-toggle" data-sides="5" title="Pentagon (5 Primes)"><img src="assets/pentagon.svg" alt="5 Sides"></button>
+                    <button class="shape-toggle" data-sides="6" title="Hexagon (6 Primes)"><img src="assets/hexagon.svg" alt="6 Sides"></button>
+                    <button class="shape-toggle" data-sides="7" title="Heptagon (7 Primes)"><img src="assets/heptagon.svg" alt="7 Sides"></button>
+                    <button class="shape-toggle" data-sides="8" title="Octagon (8 Primes)"><img src="assets/octagon.svg" alt="8 Sides"></button>
+                    <button class="shape-toggle" data-sides="9" title="Nonagon (9 Primes)"><img src="assets/nonagon.svg" alt="9 Sides"></button>
+                    <button class="shape-toggle" data-sides="10" title="Decagon (10 Primes)"><img src="assets/decagon.svg" alt="10 Sides"></button>
+                    <span class="toolbar-separator">|</span>
+                    <button id="setMinMaxButton" class="relation-button" title="Create Set from Min/Max of Selection">
+                        <i class="fas fa-arrows-alt-h"></i> Min/Max
+                    </button>
+                    <button id="setInnerPrimesButton" class="relation-button" title="Create Set from Primes Between Min/Max of Selection">
+                        <i class="fas fa-compress-arrows-alt"></i> Inner
+                    </button>
+                </div>
+                <div class="base-input-container">
+                    <label for="baseInput">Base:</label>
+                    <input type="number" id="baseInput" value="10" min="2" max="36" title="Enter base (2-36)">
+                    <button id="applyBaseButton" title="Apply Base Change">Apply</button>
+                </div>
+                 <div class="count-input-container">
+                    <label for="primeCountInput">Count:</label>
+                    <input type="number" id="primeCountInput" value="100" min="10" max="25000" title="Number of primes (10-25000). High counts may impact display performance.">
                 </div>
                 <button id="generateButton">Generate Primes</button>
             </header>
@@ -54,9 +63,11 @@
         </aside>
 
         <button id="toggleSidebar" class="sidebar-toggle-button" aria-label="Toggle Sidebar">
-             <i class="fas fa-chevron-left"></i> </button>
+            <i class="fas fa-chevron-left"></i>
+        </button>
 
-    </div> <footer>
+    </div>
+    <footer>
         <div class="footerTag">&copy; RDXENV | 2025 _NODEshell</div>
     </footer>
 
