@@ -1,175 +1,238 @@
-/* General styles */
+/* === Global Reset & Defaults === */
+* {
+  box-sizing: border-box; /* Apply border-box universally */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%; /* Ensure html takes full height */
+}
+
 body {
   font-family: Arial, sans-serif;
   font-weight: lighter;
-  margin: 0;
-  padding: 0;
   background-color: #8A9EA0;
   color: #e1e5d6;
   display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensures body spans the full viewport height */
+  flex-direction: column; /* Stack container and footer vertically */
+  min-height: 100vh; /* Ensure body takes at least full viewport height */
+  overflow-x: hidden; /* Prevent horizontal scroll on body */
 }
 
-/* Header styles */
+/* === Container === */
+.container {
+  display: flex; /* Enable flexbox for main/aside layout */
+  flex-grow: 1; /* Allow container to grow and fill space in body */
+  width: 100%;
+  position: relative; /* For absolute positioning of toggle button */
+  overflow: hidden; /* Prevent content spilling out */
+  padding-bottom: 40px; /* Match footer height */
+}
+
+/* === Main Content Area === */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  flex-grow: 1; /* Allow main to take up available space */
+  /* Crucial: Prevents content from stopping shrinkage */
+  min-width: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll within main */
+  overflow-y: auto; /* Allow vertical scroll if content overflows */
+}
+
+/* === Header === */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 8px 15px;
   background-color: #617068;
   border-bottom: 1px solid #59584F;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-shrink: 0; /* Prevent header shrinking */
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #e1e5d6;
+  white-space: nowrap;
 }
 
-header button {
-  padding: 10px 20px;
-  font-size: 16px;
+#generateButton {
+  padding: 8px 15px;
+  font-size: 0.9rem;
   cursor: pointer;
   background-color: #888e7c;
   border: 1px solid #617068;
   color: #e1e5d6;
+  border-radius: 3px;
+  white-space: nowrap;
 }
-
-header button:hover {
-  background-color: #617068;
+#generateButton:hover {
+  background-color: #71776a;
   color: #ffffff;
 }
 
-/* Main container styles */
-main {
-  flex-grow: 1; /* Ensures main expands to fill available vertical space */
+/* === Toolbar === */
+.toolbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box; /* Includes padding in size calculations */
-  width: 100%;
-}
-
-/* Grid container styles */
-#primeGrid {
-  display: grid;
-  gap: 10px;
-  width: 100%;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive dynamic columns */
-}
-
-/* Grid items (numbers) */
-#primeGrid div {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  height: 80px;
-  background-color: #617068;
-  color: #e1e5d6;
-  border: 1px solid #59584F;
-  border-radius: 2px;
-  font-size: 16px;
-}
-
-
-/* General styles */
-body {
-  font-family: Arial, sans-serif;
-  font-weight: lighter;
-  margin: 0;
-  padding: 0;
-  background-color: #8A9EA0;
-  color: #e1e5d6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Ensures body spans the full viewport height */
-}
-
-/* Header styles */
-header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #617068;
-  border-bottom: 1px solid #59584F;
+  gap: 5px;
+  flex-grow: 1;
+  min-width: 200px;
+  flex-wrap: wrap;
 }
-
-header h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #e1e5d6;
+.shape-toggle {
+  background: none; border: 1px solid #888e7c; border-radius: 5px;
+  padding: 4px; cursor: pointer; line-height: 0;
 }
-
-header button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #888e7c;
-  border: 1px solid #617068;
-  color: #e1e5d6;
+.shape-toggle img {
+  width: 24px; height: 24px; display: block;
+  filter: invert(90%) sepia(6%) saturate(296%) hue-rotate(34deg) brightness(92%) contrast(86%);
 }
-
-header button:hover {
-  background-color: #617068;
-  color: #ffffff;
+.shape-toggle:hover img {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(100deg) brightness(109%) contrast(109%);
 }
+.shape-toggle.active { background-color: #888e7c; border-color: #e1e5d6; }
+.shape-toggle.active img { filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(100deg) brightness(109%) contrast(109%); }
 
-/* Main container styles */
-main {
-  flex-grow: 1; /* Ensures main expands to fill available vertical space */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  box-sizing: border-box; /* Includes padding in size calculations */
-  width: 100%;
-}
-
-/* Grid container styles */
+/* === Prime Grid === */
 #primeGrid {
-  display: grid;
-  gap: 10px;
-  width: 100%;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive dynamic columns */
+  display: grid; gap: 8px; width: 100%; margin-top: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+  padding-bottom: 20px; /* Space before footer */
+}
+#primeGrid div {
+  display: flex; align-items: center; justify-content: center; min-height: 45px;
+  background-color: #617068; color: #e1e5d6; border: 1px solid #59584F;
+  border-radius: 3px; font-size: 0.85rem; cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+#primeGrid div:hover { background-color: #71776a; }
+#primeGrid div.selected {
+  background-color: #a7c957; color: #344e41; border-color: #8a9a5b; font-weight: bold;
 }
 
-/* Grid items (numbers) */
-#primeGrid div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
+/* === Sidebar (Right) - More Robust Flex Rules === */
+.sidebar {
+  /* Explicit Flex sizing */
+  flex-grow: 0;   /* Do not allow sidebar to grow */
+  flex-shrink: 0; /* Do not allow sidebar to shrink beyond basis */
+  flex-basis: 250px; /* Define initial size */
+  width: 250px;      /* Also set width for redundancy/clarity */
+
   background-color: #617068;
   color: #e1e5d6;
-  border: 1px solid #59584F;
-  border-radius: 2px;
-  font-size: 16px;
+  border-left: 1px solid #59584F;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Clip content when collapsing */
+  transition: width 0.3s ease-in-out, flex-basis 0.3s ease-in-out; /* Transition width and basis */
 }
 
+/* Sidebar Collapsed State */
+.sidebar.collapsed {
+  /* Override size */
+  flex-basis: 60px;
+  width: 60px;
+}
 
-/* Footer styles */
+.sidebar-header {
+  display: flex; align-items: center; padding: 10px;
+  margin-bottom: 10px; flex-shrink: 0; min-height: 25px;
+  border-bottom: 1px solid #59584f; overflow: hidden; white-space: nowrap;
+}
+.sidebar-header h2 {
+  margin: 0; font-size: 1rem; display: flex; align-items: center;
+  gap: 8px; overflow: hidden;
+}
+.sidebar-header h2 i { font-size: 1em; flex-shrink: 0; }
+.sidebar-text {
+  transition: opacity 0.2s ease-in-out; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Fade out text and controls when collapsed */
+.sidebar.collapsed .sidebar-text,
+.sidebar.collapsed .filter-controls {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction */
+  transition: opacity 0.1s ease-in-out; /* Faster fade out */
+}
+
+/* Filter Controls */
+.filter-controls {
+  padding: 0 10px 10px 10px; display: flex; flex-direction: column;
+  gap: 10px; flex-grow: 1; overflow-y: auto; overflow-x: hidden;
+  transition: opacity 0.2s ease-in-out 0.1s; /* Fade in slightly delayed */
+}
+#primeSets { display: flex; flex-direction: column; gap: 6px; }
+
+/* === Sidebar Toggle Button === */
+.sidebar-toggle-button {
+  position: absolute; top: 60px; /* User preference */
+
+  /* Position relative to sidebar edge */
+  right: 250px; /* Matches expanded sidebar width/basis */
+  transform: translateX(50%); /* Centers button ON the edge */
+
+  z-index: 15; background-color: #617068; color: #e1e5d6;
+  border: 1px solid #59584F; border-radius: 5px;
+  padding: 8px 5px; cursor: pointer; line-height: 1;
+  height: 32px; width: 24px; /* Fixed size */
+  display: flex; align-items: center; justify-content: center;
+
+  /* Transition the 'right' property */
+  transition: right 0.3s ease-in-out;
+}
+
+/* Adjust button position when sidebar is collapsed */
+.sidebar.collapsed + .sidebar-toggle-button {
+  right: 60px; /* Matches collapsed sidebar width/basis */
+}
+
+.sidebar-toggle-button i { display: block; }
+
+/* === Prime Set Items === */
+.prime-set {
+  background-color: #888e7c; border: 1px solid #617068; padding: 6px 8px;
+  border-radius: 3px; display: flex; align-items: center; justify-content: space-between;
+  gap: 5px; cursor: pointer; transition: background-color 0.2s ease;
+  white-space: nowrap; overflow: hidden;
+}
+.prime-set:hover { background-color: #71776a; }
+.prime-set-numbers {
+  font-size: 0.8rem; word-wrap: break-word; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; flex-grow: 1; margin-right: 5px;
+}
+.prime-set-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.prime-set-actions button {
+  background-color: #617068; color: #e1e5d6; border: none; border-radius: 3px;
+  padding: 3px; cursor: pointer; font-size: 0.7rem; width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center; line-height: 1;
+}
+.prime-set-actions button:hover { background-color: #515e56; }
+.copy-button.copied { background-color: #a7c957; color: #344e41; }
+.prime-set-details {
+  font-size: 0.75rem; margin-top: 5px; padding: 5px;
+  background-color: rgba(0, 0, 0, 0.1); border-radius: 2px; color: #f0f0f0;
+  white-space: normal; overflow: hidden;
+}
+
+/* === Footer === */
 footer {
-  text-align: right;
-  margin-right: 20px;
-  padding: 10px 20px;
-  background-color: #617068;
-  color: #e1e5d6;
-  border-top: 1px solid #59584F;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding-right: 40px;
+  text-align: right; padding: 10px 25px; background-color: #617068;
+  color: #e1e5d6; border-top: 1px solid #59584F;
+  width: 100%; height: 40px; /* Fixed height */
+  flex-shrink: 0; /* Prevent footer from shrinking */
+  box-sizing: border-box; /* Include padding/border in height */
+  z-index: 20;
 }
-
-
-.footerTag {
-  font-weight: lighter;
-  font-size: .7em;
-  margin-right: 3em;
-}
+.footerTag { font-weight: lighter; font-size: 0.7em; }

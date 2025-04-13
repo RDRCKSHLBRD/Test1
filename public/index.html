@@ -1,22 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>_NODEshell</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_NODEshell (Fixed Layout)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-  <header>
-    <h1>_NODEshell</h1>
-    <button id="testButton">Generate Grid</button>
-  </header>
-  <main>
-    <div id="primeGrid"></div>
-  </main>
-  <footer>
-    <div class="footerTag">&copy; RDXENV | 2024 _NODEshell</div>
-  </footer>
-  <script src="main.js"></script>
+    <div class="container">
+        <main>
+            <header>
+                <h1>_NODEshell</h1>
+                <div class="toolbar">
+                     <button class="shape-toggle" data-sides="2" title="Line Segment (2 Primes)"><img src="assets/segment.svg" alt="2 Sides"></button>
+                     <button class="shape-toggle" data-sides="3" title="Triangle (3 Primes)"><img src="assets/triangle.svg" alt="3 Sides"></button>
+                     <button class="shape-toggle" data-sides="4" title="Square (4 Primes)"><img src="assets/square.svg" alt="4 Sides"></button>
+                     <button class="shape-toggle" data-sides="5" title="Pentagon (5 Primes)"><img src="assets/pentagon.svg" alt="5 Sides"></button>
+                     <button class="shape-toggle" data-sides="6" title="Hexagon (6 Primes)"><img src="assets/hexagon.svg" alt="6 Sides"></button>
+                     <button class="shape-toggle" data-sides="7" title="Heptagon (7 Primes)"><img src="assets/heptagon.svg" alt="7 Sides"></button>
+                     <button class="shape-toggle" data-sides="8" title="Octagon (8 Primes)"><img src="assets/octagon.svg" alt="8 Sides"></button>
+                     <button class="shape-toggle" data-sides="9" title="Nonagon (9 Primes)"><img src="assets/nonagon.svg" alt="9 Sides"></button>
+                     <button class="shape-toggle" data-sides="10" title="Decagon (10 Primes)"><img src="assets/decagon.svg" alt="10 Sides"></button>
+                </div>
+                <button id="generateButton">Generate Primes</button>
+            </header>
+
+            <div id="primeGrid">
+                </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>
+                    <i class="fas fa-list"></i>
+                    <span class="sidebar-text">Prime Sets</span> </h2>
+            </div>
+            <div class="filter-controls">
+                <div id="primeSets">
+                    </div>
+            </div>
+        </aside>
+
+        <button id="toggleSidebar" class="sidebar-toggle-button" aria-label="Toggle Sidebar">
+             <i class="fas fa-chevron-left"></i> </button>
+
+    </div> <footer>
+        <div class="footerTag">&copy; RDXENV | 2025 _NODEshell</div>
+    </footer>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
